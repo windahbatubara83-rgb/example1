@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffe5ef">
+  <title>Untuk Aulia ♡</title>
+  <style>
+    :root{--pink:#ff5f9e;--deep:#d63378;--pale:#fff0f6;--ink:#60394a}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:linear-gradient(160deg,#fff8fb,#ffe5ef);min-height:100vh;overflow-x:hidden}
+    .wrap{width:min(900px,92%);margin:auto;padding:28px 0 50px}
+    .hero{text-align:center;padding:38px 18px 26px}
+    .eyebrow{letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;color:var(--deep);font-weight:800}
+    h1{font-size:clamp(2.4rem,9vw,4.8rem);line-height:1.05;margin:12px 0;color:var(--deep)}
+    .subtitle{max-width:540px;margin:0 auto;line-height:1.8}
+    .card{background:#ffffffd9;border:1px solid #ffd0e2;border-radius:24px;padding:22px;margin:18px 0;box-shadow:0 12px 35px #bd47751a}
+    h2{margin:0 0 12px;color:var(--deep);font-size:1.35rem}
+    .music-box{text-align:center}
+    .music-icon{font-size:2.8rem;margin:4px}
+    button{border:0;border-radius:999px;padding:12px 20px;background:var(--pink);color:white;font-weight:750;font-size:1rem;cursor:pointer;box-shadow:0 6px 16px #ff5f9e40}
+    button:active{transform:scale(.98)}
+    .hint{font-size:.88rem;color:#8b6374;line-height:1.6}
+    .gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .photo{min-width:0}
+    .photo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;background:#ffe0ec;border:1px solid #ffd0e2}
+    .photo p{text-align:center;font-size:.85rem;margin:8px 0 0}
+    .letter{line-height:1.9;white-space:pre-line}
+    .signature{text-align:right;color:var(--deep);font-weight:800;margin-top:12px}
+    .heart{position:fixed;bottom:-30px;z-index:-1;opacity:.35;animation:float 9s linear infinite;pointer-events:none}
+    @keyframes float{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+    footer{text-align:center;font-size:.85rem;padding:18px 0;color:#956d7d}
+    @media(max-width:540px){.gallery{grid-template-columns:1fr 1fr}.photo:last-child{grid-column:1/-1;width:70%;justify-self:center}.card{padding:18px}.hero{padding-top:24px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <div class="eyebrow">a little page for my bestie</div>
+      <h1>Hai, Aulia! ♡</h1>
+      <p class="subtitle">Ada halaman kecil khusus buat kamu, sahabatku. Makasih sudah jadi bagian dari cerita-cerita seru dan random dalam hidupku. 🌷</p>
+    </header>
+
+    <section class="card music-box">
+      <div class="music-icon">🎧💗</div>
+      <h2>Lagu untuk kita</h2>
+      <p style="margin:0 0 14px"><strong>“Best Friend” — Rex Orange County</strong></p>
+      <audio id="song" controls preload="none" style="width:min(100%,420px)">
+        <source src="best-friend.mp3" type="audio/mpeg">
+        Browser kamu belum mendukung pemutar audio.
+      </audio>
+      <p class="hint" id="musicHint">Tambahkan file audio bernama <b>best-friend.mp3</b> ke folder repository yang sama dengan index.html. Musik tidak disertakan otomatis.</p>
+    </section>
+
+    <section class="card">
+      <h2>Potongan kenangan 📸</h2>
+      <div class="gallery">
+        <div class="photo"><img src="foto1.jpg" alt="Kenangan Aulia 1" onerror="this.style.objectFit='contain';this.alt='Tambahkan foto1.jpg'"><p>little moments ♡</p></div>
+        <div class="photo"><img src="foto2.jpg" alt="Kenangan Aulia 2" onerror="this.style.objectFit='contain';this.alt='Tambahkan foto2.jpg'"><p>good memories ✨</p></div>
+        <div class="photo"><img src="foto3.jpg" alt="Kenangan Aulia 3" onerror="this.style.objectFit='contain';this.alt='Tambahkan foto3.jpg'"><p>always besties 🌷</p></div>
+      </div>
+      <p class="hint" style="margin-bottom:0;margin-top:14px">Agar foto muncul, upload foto kalian dan beri nama persis <b>foto1.jpg</b>, <b>foto2.jpg</b>, dan <b>foto3.jpg</b>.</p>
+    </section>
+
+    <section class="card">
+      <h2>Surat kecil buat Aulia 💌</h2>
+      <div class="letter">Aulia, makasih ya sudah jadi sahabat yang bikin hari-hari lebih berwarna. Makasih buat cerita, tawa, dan momen sederhana yang akhirnya jadi kenangan berharga.
+
+Semoga kita tetap saling dukung, saling ingetin, dan tetap bisa ketawa bareng walaupun nanti punya kesibukan masing-masing. Kamu pantas mendapatkan banyak hal baik.
+
+Jangan lupa bahagia, ya. Kalau lagi capek, istirahat dulu. Kamu nggak harus selalu kuat setiap saat. ♡</div>
+      <div class="signature">— dari sahabatmu 💗</div>
+    </section>
+    <footer>Dibuat dengan banyak rasa sayang untuk persahabatan kita ♡</footer>
+  </main>
+  <script>
+    // Hiasan hati kecil; tidak memengaruhi performa atau pemutaran musik.
+    for(let i=0;i<12;i++){
+      const heart=document.createElement('span');
+      heart.className='heart';
+      heart.textContent=['♡','♥','✿'][i%3];
+      heart.style.left=(Math.random()*100)+'%';
+      heart.style.animationDelay=(Math.random()*8)+'s';
+      heart.style.animationDuration=(7+Math.random()*7)+'s';
+      heart.style.fontSize=(16+Math.random()*22)+'px';
+      document.body.appendChild(heart);
+    }
+    const song=document.getElementById('song');
+    const hint=document.getElementById('musicHint');
+    song.addEventListener('error',()=>{hint.innerHTML='File musik belum ditemukan. Upload file audio yang kamu punya dengan nama <b>best-friend.mp3</b> ke folder yang sama.'});
+  </script>
+</body>
+</html>
